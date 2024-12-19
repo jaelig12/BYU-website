@@ -1,0 +1,141 @@
+/* Header */
+
+@media (min-width: 768px) {
+    .ItemTextNav-itemTextNavHolderTop {
+        margin-top: 80px;
+    }
+
+    .CoreLayout-mainWrapperContainer {
+        margin-top: 80px;
+    }
+
+    .Header-titleText {
+        margin-top: -10px;
+    }
+
+    .cdm-header {
+        max-height: 75px;
+        height: 75px;
+        position: relative;
+        margin-bottom: -75px;
+    }
+
+    img.Header-logoImage {
+        max-height: 58px;
+        padding-top: 8px !important;
+    }
+
+    .Header-header {
+        height: inherit;
+    }
+
+    .Header-headerContainer {
+        height: inherit;
+    }
+
+    .Header-logoNameContainer {
+        overflow: visible;
+        height: inherit;
+    }
+
+    .Header-controls {
+        top: 10px !important;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    img.Header-logoImage {
+        max-height: 62px;
+        padding-top: 6px !important;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    img.Header-logoImage {
+        max-height: 68px;
+        padding-top: 4px !important;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    img.Header-logoImage {
+        max-height: 73px;
+        padding-top: 2px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .ItemTextNav-itemTextNavHolderTop {
+        margin-top: 80px;
+    }
+
+    .CoreLayout-mainWrapperContainer {
+        margin-top: 80px;
+    }
+
+    .Header-titleText {
+        margin-top: -10px;
+    }
+
+    .cdm-header {
+        max-height: 75px;
+        height: 75px;
+        position: relative;
+        margin-bottom: -75px;
+    }
+
+    img.Header-logoImage {
+        max-height: 58px;
+        padding-top: 8px !important;
+    }
+
+    .Header-header {
+        height: inherit;
+    }
+
+    .Header-headerContainer {
+        height: inherit;
+    }
+
+    .Header-logoNameContainer {
+        overflow: visible;
+        height: inherit;
+    }
+
+    .Header-controls {
+        top: 10px !important;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    img.Header-logoImage {
+        max-height: 62px;
+        padding-top: 6px !important;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    img.Header-logoImage {
+        max-height: 68px;
+        padding-top: 4px !important;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    img.Header-logoImage {
+        max-height: 73px;
+        padding-top: 2px !important;
+    }
+}
+
+/* Expand button */
+
+.ItemImage-expandButton, .ItemPDF-expandButton {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  right: 0;
+}
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYU Trivia Game</title>
+    <link href="css/mystyles.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #00274c;
+            margin: 20px;
+        }
+        h1 {
+            color: #003366;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            background: #76c8fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .answers button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+            color: white;
+            background: #00274c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .answers button:hover {
+            background: #004e91;
+        }
+        .score {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="game-page">
+    <h1>BYU Trivia Game</h1>
+    <div class="quiz-container">
+        <div id="quiz">
+            <div class="question" id="question">Loading question...</div>
+            <div class="answers" id="answers"></div>
+        </div>
+        <div class="score" id="score">Score: 0</div>
+    </div>
+    <script>
+        // Questions array
+        const questions = [
+            {
+                question: "What year was BYU founded?",
+                answers: ["1875", "1890", "1903", "1920"],
+                correct: 0 // index of the correct answer
+            },
+            {
+                question: "What is BYU's mascot?",
+                answers: ["Ute", "Cougar", "Hawk", "Wildcat"],
+                correct: 1
+            },
+            {
+                question: "What are BYU's school colors?",
+                answers: ["Blue and White", "Red and Black", "Green and Gold", "Purple and Silver"],
+                correct: 0
+            },
+            {
+                question: "What is BYU's motto?",
+                answers: ["Enter to Learn, Go Forth to Serve", "Faith, Knowledge, Service", "Truth and Virtue", "Excellence in All"],
+                correct: 0
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const questionElement = document.getElementById("question");
+        const answersElement = document.getElementById("answers");
+        const scoreElement = document.getElementById("score");
+
+        function loadQuestion() {
+            const question = questions[currentQuestion];
+            questionElement.textContent = question.question;
+            answersElement.innerHTML = ""; // Clear previous answers
+
+            question.answers.forEach((answer, index) => {
+                const button = document.createElement("button");
+                button.textContent = answer;
+                button.onclick = () => checkAnswer(index);
+                answersElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selected) {
+            if (selected === questions[currentQuestion].correct) {
+                score += 10; // Increment score for correct answer
+                alert("Correct!");
+            } else {
+                alert("Oops! That's not right.");
+            }
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                endGame();
+            }
+
+            scoreElement.textContent = `Score: ${score}`;
+        }
+
+        function endGame() {
+            questionElement.textContent = "Game Over! Thanks for playing.";
+            answersElement.innerHTML = "";
+        }
+
+        // Load the first question
+        loadQuestion();
+    </script>
+</body>
+</html>
